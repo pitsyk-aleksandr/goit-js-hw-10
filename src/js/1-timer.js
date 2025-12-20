@@ -32,18 +32,27 @@ const options = {
     // Якщо користувач вибрав дату в минулому, покажи window.alert() з текстом "Please choose a date in the future" і зроби кнопку «Start» не активною.
     if (setDateTime < Date.now()) {
       // alert('Please choose a date in the future');
-      iziToast.show({
-        // title: 'Hey',
+      // Опції вікна сповіщення
+      const iziToastSetting = {
+        theme: 'dark',
         timeout: 5000,
         closeOnEscape: true,
-        message: ' Please choose a date in the future ',
-        messageColor: 'red',
-        messageSize: '20',
-        backgroundColor: 'red',
-        progressBarColor: 'greenyellow',
-        // color: 'blue',
-        position: 'topCenter',
-      });
+        position: 'center',
+        backgroundColor: '#EF4040',
+        progressBarColor: '#B51B1B',
+        iconUrl: './img/error.png',
+        // ---iconColor: '',
+        title: 'Error',
+        // titleColor: '#B51B1B',
+        titleSize: '16',
+        message: 'Please choose a date in the future',
+        // messageColor: '#B51B1B',
+        messageSize: '16',
+      };
+
+      // Показуємо вікно сповіщення з помилкою
+      iziToast.show(iziToastSetting);
+
       // Якщо користувач вибрав НЕвалідну дату, кнопка «Start» стає НЕактивною.
       refs.btnStart.disabled = true;
       return;
