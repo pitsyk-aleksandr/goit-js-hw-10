@@ -40,7 +40,7 @@ const options = {
         position: 'center',
         backgroundColor: '#EF4040',
         progressBarColor: '#B51B1B',
-        iconUrl: '../img/error.png',
+        iconUrl: '/img/error.png',
         // ---iconColor: '',
         title: 'Error',
         // titleColor: '#B51B1B',
