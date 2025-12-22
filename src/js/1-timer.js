@@ -40,13 +40,13 @@ const options = {
         position: 'center',
         backgroundColor: '#EF4040',
         progressBarColor: '#B51B1B',
-        iconUrl: './img/error.png',
+        iconUrl: './img/error.svg',
         // ---iconColor: '',
         title: 'Error',
-        // titleColor: '#ffffff',
+        titleColor: '#ffffff',
         titleSize: '16',
         message: 'Please choose a date in the future',
-        // messageColor: '#ffffff',
+        messageColor: '#ffffff',
         messageSize: '16',
       };
 
