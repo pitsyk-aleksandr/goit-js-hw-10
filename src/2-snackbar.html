@@ -32,24 +32,36 @@
         <h1 class="main-title">Snackbar</h1>
         <!-- ======= HomeWork JS #10 ======== -->
         <form class="form">
-          <label>
+          <label class="delay-label">
             Delay (ms)
-            <input type="number" name="delay" required />
+            <input type="number" name="delay" class="delay-input" required />
           </label>
 
-          <fieldset>
-            <legend>State</legend>
-            <label>
-              <input type="radio" name="state" value="fulfilled" required />
+          <fieldset class="state-fieldset">
+            <legend class="state-legend">State</legend>
+            <label class="state-label">
+              <input
+                type="radio"
+                name="state"
+                value="fulfilled"
+                class="state-input"
+                required
+              />
               Fulfilled
             </label>
-            <label>
-              <input type="radio" name="state" value="rejected" required />
+            <label class="state-label">
+              <input
+                type="radio"
+                name="state"
+                value="rejected"
+                class="state-input"
+                required
+              />
               Rejected
             </label>
           </fieldset>
 
-          <button type="submit">Create notification</button>
+          <button type="submit" class="btn-create">Create notification</button>
         </form>
         <!-- ================================ -->
       </div>

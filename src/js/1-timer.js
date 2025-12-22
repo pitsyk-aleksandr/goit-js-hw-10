@@ -34,19 +34,19 @@ const options = {
       // alert('Please choose a date in the future');
       // Опції вікна сповіщення
       const iziToastSetting = {
-        theme: 'dark',
+        // theme: 'dark',
         timeout: 5000,
         closeOnEscape: true,
         position: 'center',
         backgroundColor: '#EF4040',
         progressBarColor: '#B51B1B',
-        iconUrl: '/img/error.png',
+        iconUrl: './img/error.png',
         // ---iconColor: '',
         title: 'Error',
-        // titleColor: '#B51B1B',
+        // titleColor: '#ffffff',
         titleSize: '16',
         message: 'Please choose a date in the future',
-        // messageColor: '#B51B1B',
+        // messageColor: '#ffffff',
         messageSize: '16',
       };
 
