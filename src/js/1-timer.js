@@ -40,7 +40,7 @@ const options = {
         position: 'center',
         backgroundColor: '#EF4040',
         progressBarColor: '#B51B1B',
-        iconUrl: './img/error.svg',
+        iconUrl: '/img/error.svg',
         // ---iconColor: '',
         title: 'Error',
         titleColor: '#ffffff',
@@ -131,7 +131,17 @@ function onBtnStart(event) {
 function startTimer() {
   // Різниця між заданим Date/Time та поточним Date/Time (ms)
   const timeMs = userSelectedDate.getTime() - Date.now();
-
+  // Якщо час вичерпаний
+  if (timeMs <= 0) {
+    // Обнуляємо значення секунд для таймера на екрані
+    refs.txtSeconds.textContent = addLeadingZero(0);
+    // Зупиняємо віклики інтервальної функції
+    clearInterval(newTimer);
+    // Встановлюємо INPUT - доступним для редагування
+    refs.inputDateTime.disabled = false;
+    return;
+  }
+  // Якщо ще є час, то :
   // Конвертуємо міллісекунди в day/hours/minutes/seconds
   const { days, hours, minutes, seconds } = convertMs(timeMs);
   // Встановлюємо значення кожного span таймера
@@ -139,13 +149,6 @@ function startTimer() {
   refs.txtHours.textContent = addLeadingZero(hours);
   refs.txtMinutes.textContent = addLeadingZero(minutes);
   refs.txtSeconds.textContent = addLeadingZero(seconds);
-  // Якщо час вичерпаний
-  if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
-    // Зупиняємо віклики інтервальної функції
-    clearInterval(newTimer);
-    // Встановлюємо INPUT - доступним для редагування
-    refs.inputDateTime.disabled = false;
-  }
 }
 
 // Функція додавання 0 спереду для однозначних чисел
